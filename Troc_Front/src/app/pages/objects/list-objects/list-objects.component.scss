@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+.page {
+
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: vars.$color-grayblue;
+    border: solid 1px vars.$color-grayblue;
+}
+
+.list{
+    
+    &_container {
+    margin-top : 1em;
+    padding: 1em;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(#C2C3C5, #ffffffc7), center;
+            width: 60vw;
+            border-radius: 5px;
+    }
+
+    &_title{
+                text-align: center;
+                    color: vars.$color-darkblue
+    }
+}

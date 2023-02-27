@@ -1,0 +1,52 @@
+<div class="page">
+  <div *ngIf="object" class="container object">
+    <h3 class="object_title">{{ object.label }}</h3>
+    <div class="object_elem">
+      <label class="object_elem_label rounded-pill">Description</label>
+      <div class="object_elem_content">{{ object.description }}</div>
+    </div>
+    <div class="object_elem">
+      <label class="object_elem_label rounded-pill">Valeur nominale</label>
+      <div class="object_elem_content">{{ object.value }} euros</div>
+    </div>
+    <div class="object_elem">
+      <label class="object_elem_label rounded-pill">Mise en ligne</label>
+      <div class="object_elem_content">
+        {{ object.uploadDate! | date : "dd/MM/yyyy" }}
+      </div>
+    </div>
+
+    <div class="object_elem">
+      <label class="object_elem_label rounded-pill">Etat</label>
+      <div class="object_elem_content" [ngSwitch]="object.objectState">
+        <span *ngSwitchCase="0">Neuf</span>
+        <span *ngSwitchCase="1">Bon état</span>
+        <span *ngSwitchCase="2">Etat moyen</span>
+        <span *ngSwitchCase="3">Mauvais état</span>
+        <span *ngSwitchCase="4">Hors d'usage</span>
+        <span *ngSwitchDefault>Etat inconnu</span>
+      </div>
+    </div>
+
+    <div class="object_elem">
+      <label class="object_elem_label rounded-pill">Prêteur</label>
+      <a
+        routerLink="/details-user/{{ object.owner.id }}"
+        class="object_elem_content"
+      >
+        <span class="owner btn btn-primary">{{ object.owner.Fn }}</span>
+      </a>
+    </div>
+    <div class="photos">
+      <div *ngFor="let p of object.photos">
+        <div class="item">
+          <img
+            id="objectImage"
+            class="polaroid"
+            src="data:image/jpg;base64, {{ p.f }}"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

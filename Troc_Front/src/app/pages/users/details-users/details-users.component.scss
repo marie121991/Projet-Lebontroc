@@ -1,0 +1,54 @@
+@use 'src/styles/vars';
+
+.user {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    margin-top: 1em;
+    background: linear-gradient(#d1ab7db1, #ffffffc7), center;
+    width: 60vw;
+    border-radius: 5px;
+
+    &_title {
+        text-align: center;
+        color: vars.$color-darkblue
+    }
+
+    &_elem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5em;
+
+
+        &_label {
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 0.4em;
+            background-color: vars.$color-yellow;
+            width: 30%;
+            text-align: center;
+
+        }
+
+        &_content {
+            text-align: left;
+            color: vars.$color-lightbrown;
+            width: 60%;
+            font-weight: 700;
+        }
+    }
+}
+
+.objects_container {
+    margin: 0.5em;
+    box-shadow:
+            2.8px 2.8px 2.2px rgba(0, 0, 0, 0.07),
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.05),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.042),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.035),
+            41.8px 41.8px 33.4px rgba(0, 0, 0, 0.028),
+            100px 100px 80px rgba(0, 0, 0, 0.02);
+}

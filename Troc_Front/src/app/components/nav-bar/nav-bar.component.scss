@@ -1,0 +1,39 @@
+@use 'src/styles/vars';
+
+.navbar {
+    min-height: 20vh;
+    font-size: 2em;
+    padding: 0.2em;
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(#96775bc6 ,#C2C3C5),
+        center;
+
+    &_title {
+        font-size: 1.5em;
+        color: vars.$color-grayblue;
+        &:hover {
+                transform: scale(1.05);
+            }
+
+    }
+
+    &_item {
+        font-size: 0.9em;
+        color: vars.$color-lightgray;
+        border-radius: 5px;
+        margin: 0 0.2em;
+            box-shadow:
+                    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.07),
+                    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.05),
+                    12.5px 12.5px 10px rgba(0, 0, 0, 0.042),
+                    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.035),
+                    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.028),
+                    100px 100px 80px rgba(0, 0, 0, 0.02);
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: vars.$color-yellow;
+        }
+    }
+}

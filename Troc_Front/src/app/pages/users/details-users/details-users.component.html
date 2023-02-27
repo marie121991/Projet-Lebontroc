@@ -1,0 +1,24 @@
+<div class="page">
+  <div *ngIf="user" class="container user">
+    <h3 class="user_title">{{ user.firstName }} {{ user.lastName }}</h3>
+    <div class="user_elem">
+      <label class="user_elem_label rounded-pill">Inscrit depuis le</label>
+      <div class="user_elem_content">
+        {{ user.dateInscription | date : "dd/MM/yyyy" }}
+      </div>
+    </div>
+    <div class="user_elem">
+      <label class="user_elem_label rounded-pill">Localisation</label>
+      <div class="user_elem_content">{{ user.address.city }}</div>
+    </div>
+    <div *ngIf="objects" class="user_elem_label rounded-pill">Objets</div>
+    <app-list-search-result
+      [searchResults]="objects"
+      (searchResultClick)="showDetails($event)"
+      class="objects_container"
+    ></app-list-search-result>
+  </div>
+  <a class="btn btn-primary" routerLink="/details-user/{{ userId }}/add"
+    >Ajouter objet</a
+  >
+</div>

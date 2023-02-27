@@ -1,0 +1,38 @@
+<div class="page">
+  <div class="list_container">
+    <h3 class="list_title">Liste des objets disponibles à l'emprunt</h3>
+
+    <div class="mb-3">
+      <label class="form-label">Rechercher un objet</label>
+      <input
+        type="text"
+        class="form-control"
+        id="input-searchText"
+        placeholder="Exemple : scie sauteuse"
+        #searchText
+      />
+    </div>
+
+    <div class="mb-3">
+      <button
+        type="button"
+        class="btn btn-primary button"
+        (click)="search(searchText.value)"
+      >
+        Rechercher
+      </button>
+    </div>
+
+    <div *ngIf="loading" class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+
+    <app-list-search-result
+      *ngIf="results"
+      (searchResultClick)="showDetails($event)"
+      [searchResults]="results"
+    ></app-list-search-result>
+  </div>
+</div>

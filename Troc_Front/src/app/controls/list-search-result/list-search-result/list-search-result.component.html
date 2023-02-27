@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="list-group grp" *ngIf="searchResults && searchResults.length > 0">
+    <div
+      class="list-group-item itm"
+      *ngFor="let r of searchResults"
+      (click)="onSearchResultClick(r)"
+    >
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ r.label }}</div>
+        {{ r.shortDescription }}
+      </div>
+      <img src="" alt="" />
+      <div [ngSwitch]="r.indication">
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="0"
+          >Neuf</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="1"
+          >Bon état</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="2"
+          >Etat moyen</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="3"
+          >Mauvais état</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="4"
+          >Hors d'usage</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchCase="null"
+          >Etat inconnu</span
+        >
+        <span class="badge bg-primary rounded-pill bdg" *ngSwitchDefault>{{
+          r.indication
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchResults && searchResults.length == 0">Aucun résultat</div>
+</div>
