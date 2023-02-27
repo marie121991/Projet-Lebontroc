@@ -1,5 +1,3 @@
 # Projet lebontroc
 
-## Test
-
-Bonjour, ceci est un test.
+Dans ce projet il est question de mettre en place une plateforme web d'échange de biens entre des personnes.
